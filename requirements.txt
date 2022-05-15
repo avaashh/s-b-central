@@ -1,0 +1,8 @@
+discord-py-interactions==4.1.0
+discord-py-slash-command==3.0.3
+discord.py==1.7.3
+requests==2.26.0
+pymongo==4.0.1
+dnspython==2.2.0
+beautifulsoup4==4.10.0
+python-dotenv==0.19.2
