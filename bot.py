@@ -51,7 +51,7 @@ async def DailyRun():
     await IowaWeather(bot=bot)
 
 
-@tasks.loop(seconds=5 * 60)  # 5 minutes
+@tasks.loop(seconds=15 * 60)  # 15 minutes
 async def NewsFlash():
     await SandBNews(bot=bot)
 
