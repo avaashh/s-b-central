@@ -65,12 +65,12 @@ async def IowaWeather(bot=None, ctx=None):
         )
         embed.add_field(
             name="Daily Chance of Rain (%)",
-            value=f"**{day['daily_chance_of_rain']*100}% **",
+            value=f"**{day['daily_chance_of_rain']}% **",
             inline=True,
         )
         embed.add_field(
             name="Daily Chance of Snow (%)",
-            value=f"**{day['daily_chance_of_snow'] * 100}% **",
+            value=f"**{day['daily_chance_of_snow']}% **",
             inline=True,
         )
 
