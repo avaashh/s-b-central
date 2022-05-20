@@ -6,9 +6,9 @@ from dotenv import load_dotenv
 from db import *
 
 from src.Birthdays import RecordBirthday, BirthdayCommands, checkbirthdays
-from src.Wordle import RecordWordle, WordleCommands
 from src.Weather import IowaWeather
 from src.News import SandBNews
+from src.Slay import RecordSlay, SlayLeaderboards
 
 
 load_dotenv()
@@ -34,21 +34,21 @@ async def on_message(ctx):
     if "-birthday" in ctx.content.lower():
         await BirthdayCommands(ctx)
 
-    elif "-wordle" in ctx.content.lower():
-        await WordleCommands(ctx)
-
     elif "-weather" in ctx.content.lower():
-        await IowaWeather(ctx=ctx)
+        await IowaWeather(ctx, userRequest=True)
 
+    elif "-slay" in ctx.content.lower():
+        await SlayLeaderboards(ctx)
     else:
+        await RecordSlay(ctx)
         await RecordBirthday(ctx)
-        await RecordWordle(ctx)
 
 
 @tasks.loop(seconds=86400)  # task runs every 86400 seconds, ie everyday
 async def DailyRun():
-    await checkbirthdays(bot)
-    await IowaWeather(bot=bot)
+    # await checkbirthdays(bot)
+    # await IowaWeather(bot)
+    pass
 
 
 @tasks.loop(seconds=15 * 60)  # 15 minutes
