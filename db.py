@@ -23,6 +23,10 @@ def UpdateOne(collection, criteria, post):
     db[collection].update_one(criteria, {"$set": post})
 
 
+def IncrementOne(collection, criteria, post):
+    db[collection].update_one(criteria, {"$inc": post})
+
+
 def FindOne(collection, criteria):
     return db[collection].find_one(criteria)
 
