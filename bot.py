@@ -46,9 +46,8 @@ async def on_message(ctx):
 
 @tasks.loop(seconds=86400)  # task runs every 86400 seconds, ie everyday
 async def DailyRun():
-    # await checkbirthdays(bot)
-    # await IowaWeather(bot)
-    pass
+    await checkbirthdays(bot)
+    await IowaWeather(bot)
 
 
 @tasks.loop(seconds=15 * 60)  # 15 minutes
